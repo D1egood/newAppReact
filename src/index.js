@@ -10,7 +10,7 @@ function LolCharacters() {
 
     return (<div>
         <h1>These are my mains</h1>
-        <hr />console.log("greeting");
+        <hr />
         <section className='some'>
             {characters.map((character) => {
                 return <Character key={character.id}    {...character}></Character>
