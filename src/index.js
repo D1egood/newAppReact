@@ -1,17 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+//Styles
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { characters } from './characters';
+import Character from './Character';
+import { greeting } from './testing/testing';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function LolCharacters() {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    return (<div>
+        <h1>These are my mains</h1>
+        <hr />console.log("greeting");
+        <section className='some'>
+            {characters.map((character) => {
+                return <Character key={character.id}    {...character}></Character>
+            })}
+        </section></div>)
+};
+
+ReactDom.render(<LolCharacters />, document.getElementById('root'));

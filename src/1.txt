@@ -1,0 +1,59 @@
+import React from 'react';
+import ReactDom from 'react-dom';
+//Importamos css
+import './index.css';
+/*
+ //Podemos generar estos componentes de esta manera
+  function Greeting(){
+    return (<div>
+      <h1>hello, this is my first component</h1>
+      <hr></hr>
+      <Person />
+      <ul>
+        <li><a href="">Holis</a></li>
+      </ul>
+      </div>);
+  }
+
+
+  const Person = () => {
+    //tambien se puede hacer en una sola linea de esta manera
+    //const Person = () => <h2>ALGO</h2>;
+  return <h2>Did you think this would work?</h2>;
+  };
+
+tambien podemos hacerlo asi aunque no sea recomendado
+  const Greeting = () =>{
+    return React.createElement('div',{},React.createElement('h1',{}, 'Hello, World'));
+  };*/
+      const id_Riven ={
+        nombre : 'Riven pulso de fuego',
+        img : './riven.jpg'
+    };
+
+      const id_Fiora ={
+        nombre : 'Proyecto Fiora',
+        img : './fiora.jpg'
+    };
+
+    function LolCharacters(){
+      return(<div className="some">
+          <h1>Estos son mis personajes favoritos</h1>
+          <hr />
+          <Character  nombre={id_Riven.nombre} img={id_Riven.img} />
+          <Character  nombre={id_Fiora.nombre} img={id_Fiora.img} />
+      </div>);
+    };
+
+
+    function Character({img, nombre}){
+      //const {img, nombre} = props;
+      return(
+          <div>
+            <h2>{nombre}</h2>
+            <img src={img} alt={nombre} />
+          </div>
+      );
+    };
+    
+    ReactDom.render(<LolCharacters />, document.getElementById('root'));
